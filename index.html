@@ -33,7 +33,7 @@
 
 			//second if statement compares the possible values selected and determines the winner
 			if(computerSelection === 1 && playerValue === 1){
-				winner = "Tie Game!";
+				winner = "Tie Game! You both chose Rock";
 			}
 			else if (computerSelection === 1 && playerValue === 2){
 				winner = "You win! Paper beats rock.";
@@ -42,14 +42,41 @@
 				winner = "You Lose! Rock beats paper";
 			}
 
+			//computer chooses Paper
+			else if(computerSelection === 2 && playerValue === 1){
+				winner = "You lose!  Paper beats rock";
+			}
+			else if(computerSelection === 2 && playerValue === 2){
+				winner = "Tie game! You both chose Paper";
+			}
+			else if (computerSelection === 2 && playerValue === 3){
+				winner = "You win! Scissors beats Paper";
+			}
+
+			//computer chooses Scissors
+			else if(computerSelection === 3 && playerValue === 1){
+				winner = "You win! Rock beats Scissors";
+			}
+			else if(computerSelection === 3 && playerValue === 2){
+				winner = "You lose!  Scissors beats paper";
+			}
+			else if(computerSelection === 3 && playerValue === 3){
+				winner = "Tie game!  You both chose Scissors";
+			}
+
+			//special message if code breaks here
+			else{
+				winner = "Something went horribly wrong!  You really should play better games.";
+			}
 
 			//return winner;
 			console.log(winner);
 		}
 
 		let compMove = computerPlay();
-		console.log(compMove);
-		//playRound("scissor", compMove);
+		console.log("Computer chose: " + compMove);
+		
+		playRound("scissor", compMove);
 
 	</script>
 </head>
