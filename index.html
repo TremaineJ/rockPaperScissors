@@ -8,6 +8,9 @@
 		//paper = 2
 		//scissor = 3
 
+		let computerScore;
+		let playerScore;
+
 		function computerPlay(){
 			
 			return Math.floor(Math.random()*3)+1;
@@ -18,6 +21,8 @@
 
 			let winner;
 			let playerValue;
+
+
 
 			//first if statment assigns a number value to the player seletion
 			if(playerSelection === "rock"){
@@ -69,14 +74,28 @@
 				winner = "Something went horribly wrong!  You really should play better games.";
 			}
 
-			//return winner;
-			console.log(winner);
+			return winner;
 		}
 
+
+		function playMove(){
+			let selection = prompt("Do you choose Rock, Paper, or Scissors?");
+
+			return selection.toLowerCase();
+		}
+
+		function game(){
+			
+		}
+
+		let playerMove = playMove();
 		let compMove = computerPlay();
-		console.log("Computer chose: " + compMove);
+		let roundWinner = playRound(playerMove, compMove);
 		
-		playRound("scissor", compMove);
+		console.log(roundWinner);
+		//console.log(computerScore);
+		//console.log(playerScore);
+		//game();
 
 	</script>
 </head>
